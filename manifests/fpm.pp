@@ -36,9 +36,9 @@
 # Copyright 2013 Your name here, unless otherwise noted.
 #
 class php::fpm (
-  $service_enable   = false,
-  $phpfpm_name      = 'php-fpm',
-) inherits php::params {
+  $service_enable   = $php::fpm::params::service_enable,
+  $phpfpm_name      = $php::fpm::params::phpfpm_name,
+) inherits php::fpm::params {
 
   package { 'php-fpm':
     ensure   => installed,

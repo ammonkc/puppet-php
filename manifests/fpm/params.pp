@@ -1,6 +1,6 @@
-# Class: php::params
+# Class: php::fpm::params
 #
-# This class manages PHP parameters
+# This class manages PHP-FPM parameters
 #
 # Parameters:
 # - The $user that Apache runs as
@@ -17,10 +17,10 @@
 #
 # Sample Usage:
 #
-class php::params {
+class php::fpm::params {
     if $::osfamily == 'redhat' or $::operatingsystem == 'amazon' {
-        $service_enable = true,
-        $php_name       = 'php',
+        $service_enable   = false
+        $phpfpm_name      = 'php-fpm'
     } elsif $::osfamily == 'debian' {
 
     } else {

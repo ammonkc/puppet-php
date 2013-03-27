@@ -1,4 +1,4 @@
-# Class: php::params
+# Class: php::composer::params
 #
 # This class manages PHP parameters
 #
@@ -17,12 +17,24 @@
 #
 # Sample Usage:
 #
-class php::params {
+class php::composer::params {
     if $::osfamily == 'redhat' or $::operatingsystem == 'amazon' {
-        $service_enable = true,
-        $php_name       = 'php',
+        $target_dir      = '/usr/local/bin'
+        $composer_file   = 'composer'
+        $download_method = 'curl'
+        $logoutput       = false
+        $tmp_path        = '/opt'
+        $php_package     = 'php-cli'
+        $owner           = 'root'
+        $group           = 'root'
+        $self_update     = false
     } elsif $::osfamily == 'debian' {
-
+        $target_dir      = '/usr/local/bin'
+        $composer_file   = 'composer'
+        $download_method = 'curl'
+        $logoutput       = false
+        $tmp_path        = '/home/vagrant'
+        $php_package     = 'php5-cli'
     } else {
         fail("Class['apache::params']: Unsupported operatingsystem: $operatingsystem")
     }

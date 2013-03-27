@@ -36,12 +36,8 @@
 # Copyright 2013 Your name here, unless otherwise noted.
 #
 class php (
-  $service_enable   = true,
-  $php_name      = 'php',
+  $php_name = $php::params::php_name,
 ) inherits php::params {
-
-  # true/false is sufficient for both ensure and enable
-  validate_bool($service_enable)
 
   package { 'php':
     ensure   => installed,
