@@ -97,9 +97,9 @@ define php::ini (
   $session_hash_bits_per_character = '5',
   $url_rewriter_tags          = 'a=href,area=href,frame=src,input=src,form=fakeentry'
 ) {
-  include phpfpm
+  include php::fpm
   file { $title:
-    content => template('phpfpm/php.ini-el6.erb'),
+    content => template('php/php.ini-el6.erb'),
   }
 }
 

@@ -1,6 +1,6 @@
 # == Class: php::fpm
 #
-# Full description of class phpfpm here.
+# Full description of class php::fpm here.
 #
 # === Parameters
 #
@@ -23,7 +23,7 @@
 #
 # === Examples
 #
-#  class { phpfpm:
+#  class { php::fpm:
 #    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ]
 #  }
 #
