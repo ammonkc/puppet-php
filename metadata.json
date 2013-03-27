@@ -1,0 +1,12 @@
+{
+  "description": "Module for PHP-FPM configuration",
+  "summary": "Puppet module for php-fpm",
+  "author": "ammonkc",
+  "source": "git://github.com/ammonkc/ammonkc-phpfpm.git",
+  "project_page": "https://github.com/ammonkc/ammonkc-phpfpm",
+  "name": "ammonkc-phpfpm",
+  "checksums": {},
+  "dependencies": [],
+  "license": "Apache 2.0",
+  "version": "0.1.2"
+}
