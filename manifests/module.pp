@@ -1,14 +1,14 @@
-# Define: phpfpm::module
+# Define: php::module
 #
 # Manage optional PHP modules which are separately packaged.
 # See also php::module:ini for optional configuration.
 #
 # Sample Usage :
-#  phpfpm::module { [ 'ldap', 'mcrypt', 'xml' ]: }
-#  phpfpm::module { 'odbc': ensure => absent }
-#  phpfpm::module { 'pecl-apc': }
+#  php::module { [ 'ldap', 'mcrypt', 'xml' ]: }
+#  php::module { 'odbc': ensure => absent }
+#  php::module { 'pecl-apc': }
 #
-define phpfpm::module ( $ensure = installed ) {
+define php::module ( $ensure = installed ) {
   package { "php-${title}":
     ensure => $ensure,
   }

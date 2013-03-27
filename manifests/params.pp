@@ -1,6 +1,6 @@
-# Class: phpfpm::params
+# Class: php::params
 #
-# This class manages PHP-FPM parameters
+# This class manages PHP parameters
 #
 # Parameters:
 # - The $user that Apache runs as
@@ -17,19 +17,15 @@
 #
 # Sample Usage:
 #
-class phpfpm::params {
+class php::params {
 
     $service_enable   = true
     $phpfpm_name      = 'php-fpm'
 
   if $::osfamily == 'redhat' or $::operatingsystem == 'amazon' {
-    $mod_packages          = {}
-    $mod_libs              = {}
-    $mod_identifiers       = {}
+
   } elsif $::osfamily == 'debian' {
-    $mod_packages          = {}
-    $mod_libs              = {}
-    $mod_identifiers       = {}
+
   } else {
     fail("Class['apache::params']: Unsupported operatingsystem: $operatingsystem")
   }

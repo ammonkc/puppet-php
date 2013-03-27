@@ -1,4 +1,4 @@
-# == Class: php
+# == Class: php::fpm
 #
 # Full description of class phpfpm here.
 #
@@ -23,7 +23,7 @@
 #
 # === Examples
 #
-#  class { php:
+#  class { phpfpm:
 #    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ]
 #  }
 #
@@ -35,17 +35,17 @@
 #
 # Copyright 2013 Your name here, unless otherwise noted.
 #
-class php (
-  $service_enable   = true,
-  $php_name      = 'php',
+class php::fpm (
+  $service_enable   = false,
+  $phpfpm_name      = 'php-fpm',
 ) inherits php::params {
 
-  # true/false is sufficient for both ensure and enable
-  validate_bool($service_enable)
-
-  package { 'php':
+  package { 'php-fpm':
     ensure   => installed,
-    name     => $php_name,
+    name     => $phpfpm_name,
     require  => Package['httpd'],
+  }
+  if $service_enable == true {
+    include php::service
   }
 }

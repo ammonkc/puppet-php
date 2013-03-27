@@ -1,4 +1,4 @@
-# Class: phpfpm::service
+# Class: php::service
 #
 # This class installs PHP-FPM for Apache
 #
@@ -13,10 +13,10 @@
 #
 # Sample Usage:
 #
-class phpfpm::service (
+class php::service (
     $service_enable = true,
     $phpfpm_name    = 'php-fpm',
-) inherits phpfpm::params {
+) inherits php::params {
 
   # true/false is sufficient for both ensure and enable
   validate_bool($service_enable)

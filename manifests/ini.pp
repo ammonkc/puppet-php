@@ -1,17 +1,17 @@
-# Define: phpfpm::ini
+# Define: php::ini
 #
 # Definition to create a php.ini file. Typically used once per node where php
 # will be used, to configure the content of the main /etc/php.ini file.
 #
 # Sample Usage:
-#  Phpfpm::Ini {
+#  Php::Ini {
 #      expose_php => 'Off',
 #  }
-#  phpfpm::ini { '/etc/php.ini':
+#  php::ini { '/etc/php.ini':
 #      display_errors => 'On',
 #  }
 #
-define phpfpm::ini (
+define php::ini (
   # php.ini options in the order they appear in the original file
   $user_ini_filename          = '.user.ini',
   $user_ini_cache_ttl         = '300',

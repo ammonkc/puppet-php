@@ -1,6 +1,6 @@
-phpfpm
+php
 
-This is the phpfpm module.
+This is the php module.
 
 License
 -------
