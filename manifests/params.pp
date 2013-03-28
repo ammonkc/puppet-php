@@ -19,8 +19,8 @@
 #
 class php::params {
     if $::osfamily == 'redhat' or $::operatingsystem == 'amazon' {
-        $service_enable = true,
-        $php_name       = 'php',
+        $service_enable = true
+        $php_name       = 'php'
     } elsif $::osfamily == 'debian' {
 
     } else {
