@@ -29,7 +29,7 @@
 #
 # Ammon Casey <ammonkc@gmail.com>
 #
-class php::composer(
+class php::composer (
   $target_dir      = $php::composer::params::target_dir,
   $composer_file   = $php::composer::params::composer_file,
   $download_method = $php::composer::params::download_method,

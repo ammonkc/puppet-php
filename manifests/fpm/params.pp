@@ -24,6 +24,6 @@ class php::fpm::params {
     } elsif $::osfamily == 'debian' {
 
     } else {
-        fail("Class['apache::params']: Unsupported operatingsystem: $operatingsystem")
+        fail("Class['php::fpm::params']: Unsupported operatingsystem: $operatingsystem")
     }
 }

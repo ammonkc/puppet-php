@@ -1,6 +1,6 @@
-# Class: php::params
+# Class: php::fastcgi::params
 #
-# This class manages PHP parameters
+# This class manages mod_fastcgi parameters
 #
 # Parameters:
 # - The $user that Apache runs as
@@ -17,11 +17,9 @@
 #
 # Sample Usage:
 #
-class php::params {
+class php::fastcgi::params {
     if $::osfamily == 'redhat' or $::operatingsystem == 'amazon' {
         $service_enable = true
-        $php_name       = 'php'
-        $phpfpm_name    = 'php-fpm'
         $fastcgi_name   = 'mod_fastcgi'
         $httpd_dir      = '/etc/httpd'
         $conf_dir       = "${httpd_dir}/conf"
@@ -30,6 +28,6 @@ class php::params {
     } elsif $::osfamily == 'debian' {
 
     } else {
-        fail("Class['php::params']: Unsupported operatingsystem: $operatingsystem")
+        fail("Class['php::fastcgi::params']: Unsupported operatingsystem: $operatingsystem")
     }
 }
