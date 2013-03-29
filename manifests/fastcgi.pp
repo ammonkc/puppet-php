@@ -5,7 +5,7 @@ class php::fastcgi (
     $confd_dir      = $php::fastcgi::params::confd_dir,
 ) inherits php::fastcgi::params {
     package { 'fastcgi':
-        ensure  => "installed"
+        ensure  => "installed",
         name    => $fastcgi_name,
         require => Package['httpd'],
     }
