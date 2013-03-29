@@ -36,16 +36,16 @@
 # Copyright 2013 Your name here, unless otherwise noted.
 #
 class php::fpm (
-  $service_enable   = $php::fpm::params::service_enable,
-  $phpfpm_name      = $php::fpm::params::phpfpm_name,
+    $service_enable   = $php::fpm::params::service_enable,
+    $phpfpm_name      = $php::fpm::params::phpfpm_name,
 ) inherits php::fpm::params {
 
-  package { 'php-fpm':
-    ensure   => installed,
-    name     => $phpfpm_name,
-    require  => Package['httpd'],
-  }
-  if $service_enable == true {
-    include php::service
-  }
+    package { 'php-fpm':
+        ensure   => "installed",
+        name     => $phpfpm_name,
+        require  => Package['httpd'],
+    }
+    if $service_enable == true {
+        include php::fpm::service
+    }
 }
