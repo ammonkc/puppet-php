@@ -19,7 +19,7 @@
 #
 class php::fpm::params {
     if $::osfamily == 'redhat' or $::operatingsystem == 'amazon' {
-        $service_enable   = false
+        $service_enable   = true
         $phpfpm_name      = 'php-fpm'
     } elsif $::osfamily == 'debian' {
 
