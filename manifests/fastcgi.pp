@@ -15,8 +15,8 @@ class php::fastcgi (
     }
     file { "/usr/lib/cgi-bin":
         ensure  => "directory",
-        owner   => "root",
-        group   => "root",
+        owner   => "apache",
+        group   => "apache",
         mode    => 0755
     }
 }
